@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html>
+<meta charset="utf-8"/>
+
+<style>
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+    float: left;
+    width: 30%;
+    height: 1800px;
+
+    background: #ccc;
+    padding: 20px;
+  }
+
+  article {
+    float: left;
+    padding: 20px;
+    width: 70%;
+    background-color: #f1f1f1;
+
+  }
+
+  section:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+@media (max-width: 600px) {
+  nav, article {
+    width: 100%;
+    height: auto;
+  }
+}
+
+.title2 {
+  background-color: black;
+  color: white;
+  font-size: 130%;
+  text-align: center;
+  padding: 10px;
+}
+.buttons{
+  align-self: center;
+  padding: 15px;
+  font-size: 130%;
+  margin-bottom: 5px;
+}
+.dato{
+  float: left;
+  margin-bottom: 5px;
+  padding: 20px;
+  height: 10%;
+  width: 20%;
+  font-size: 150%;
+  text-align: center;
+  background-color: rgb(255, 255, 128);
+}
+.operando{
+  float: left;
+  margin-bottom: 5px;
+  padding: 20px;
+  height: 10%;
+  width: 20%;
+  font-size: 150%;
+  text-align: center;
+  background-color: rgb(255, 120, 120);l;
+}
+.result {
+  width: 20%;
+  padding: 20px;
+
+}
+</style>
+
+<script>
+var results = [];
+var reslt = ["resultado1","resultado2","resultado3","resultado4","resultado5","resultado6","resultado7","resultado8","resultado9","resultado10"];
+function ejFacil(){
+  results = [];
+  var d1s = ["1d1","2d1","3d1","4d1","5d1","6d1","7d1","8d1","9d1","10d1"];
+  var d2s = ["1d2","2d2","3d2","4d2","5d2","6d2","7d2","8d2","9d2","10d2"];
+  var ops = ["1op1","2op1","3op1","4op1","5op1","6op1","7op1","8op1","9op1","10op1"];
+  var op = ["+","-","/","x"];
+
+  for (var i = 0; i < d1s.length; i++) {
+    document.getElementById(reslt[i]).style.backgroundColor="white";
+    document.getElementById(reslt[i]).value="";
+    var d1 = Math.round(Math.random()*10);
+    var d2 = Math.round(Math.random()*10);
+    var alop = Math.round(Math.random()*1);
+    document.getElementById(d1s[i]).innerHTML = d1;
+    document.getElementById(d2s[i]).innerHTML = d2;
+    document.getElementById(ops[i]).innerHTML = op[alop];
+    if (op[alop] == "+") {
+      results.push(d1 + d2);
+    }else if (op[alop] == "-") {
+      results.push(d1 - d2);
+    }else if(op[alop] == "/") {
+      if (d1 === 0 || d2 === 0) {
+          results.push(0);
+      }else {
+          results.push(d1 / d2);
+      }
+    }else if(op[alop] == "*") {
+      results.push(d1 * d2);
+    }
+    // document.getElementById(reslt[i]).value = results[i];
+  }
+
+}
+function ejMedio(){
+  results = [];
+  var d1s = ["1d1","2d1","3d1","4d1","5d1","6d1","7d1","8d1","9d1","10d1"];
+  var d2s = ["1d2","2d2","3d2","4d2","5d2","6d2","7d2","8d2","9d2","10d2"];
+  var ops = ["1op1","2op1","3op1","4op1","5op1","6op1","7op1","8op1","9op1","10op1"];
+  var op = ["+","-","/","x"];
+  for (var i = 0; i < d1s.length; i++) {
+    document.getElementById(reslt[i]).style.backgroundColor="white";
+    document.getElementById(reslt[i]).value="";
+    var d1 = Math.round(Math.random()*10);
+    var d2 = Math.round(Math.random()*10);
+    var alop = Math.round(Math.random()*3);
+    document.getElementById(d1s[i]).innerHTML = d1;
+    document.getElementById(d2s[i]).innerHTML = d2;
+    document.getElementById(ops[i]).innerHTML = op[alop];
+    if (op[alop] == "+") {
+      results.push(d1 + d2);
+    }else if (op[alop] == "-") {
+      results.push(d1 - d2);
+    }else if(op[alop] == "/") {
+      if (d1 === 0 || d2 === 0) {
+          results.push(0);
+      }else {
+          results.push(d1 / d2);
+      }
+    }else if(op[alop] == "*") {
+      results.push(d1 * d2);
+    }
+  }
+  // ejList.style.display="none";
+}
+function ejDificil(){
+  results = [];
+  var d1s = ["1d1","2d1","3d1","4d1","5d1","6d1","7d1","8d1","9d1","10d1"];
+  var d2s = ["1d2","2d2","3d2","4d2","5d2","6d2","7d2","8d2","9d2","10d2"];
+  var ops = ["1op1","2op1","3op1","4op1","5op1","6op1","7op1","8op1","9op1","10op1"];
+  var op = ["+","-","/","x"];
+  for (var i = 0; i < d1s.length; i++) {
+    document.getElementById(reslt[i]).style.backgroundColor="white";
+    document.getElementById(reslt[i]).value="";
+    var d1 = Math.round(Math.random()*100);
+    var d2 = Math.round(Math.random()*100);
+    var alop = Math.round(Math.random()*3);
+    document.getElementById(d1s[i]).innerHTML = d1;
+    document.getElementById(d2s[i]).innerHTML = d2;
+    document.getElementById(ops[i]).innerHTML = op[alop];
+    if (op[alop] == "+") {
+      results.push(d1 + d2);
+    }else if (op[alop] == "-") {
+      results.push(d1 - d2);
+    }else if(op[alop] == "/") {
+      if (d1 === 0 || d2 === 0) {
+          results.push(0);
+      }else {
+          results.push(d1 / d2);
+      }
+    }else if(op[alop] == "*") {
+      results.push(d1 * d2);
+    }
+  }
+}
+  function calcResult(){
+    var ok=0;
+    for (var i = 0; i < reslt.length; i++) {
+      var resp = document.getElementById(reslt[i]);
+      if (resp.value == results[i]) {
+        ok++;
+        document.getElementById(reslt[i]).style.backgroundColor="green";
+      } else {
+        document.getElementById(reslt[i]).style.backgroundColor="red";
+      }
+    }
+    document.getElementById("cali").innerHTML=ok+"/10";
+  }
+
+</script>
+
+<body style="background-color:powderblue;">
+
+<div style="background-color:black;color:white;padding:20px;">
+  <h2 style="text-align:center;">Ejercicios Matematicos</h2>
+  <p style="text-align:center;">Problemas matematicos de operaciones basicas nivel primaria con diferentes niveles de dificultad. </p>
+</div>
+
+<section>
+  <nav>
+    <p class="title2"> Dificultad </p>
+    <input type="button" onclick="ejFacil()" value="Facil" class="buttons">
+    <p> Facil: sumas y restas, numeros del 0 al 10 </p>
+    <input type="button" onclick="ejMedio()" value="Medio" class="buttons">
+    <p> Medio: sumas, restas, divisiones y multiplicaciones, numeros del 0 al 10 </p>
+    <input type="button" onclick="ejDificil()" value="Dificil" class="buttons">
+    <p> Medio: sumas, restas, divisiones y multiplicaciones, numeros del 0 al 100 </p>
+
+  </nav>
+
+  <article>
+    <p class="title2" >Ejercicios</p>
+      <p class="dato" id="1d1"> </p>
+      <p class="operando" id="1op1">  </p>
+      <p class="dato" id="1d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado1" >
+  </article>
+  <!-- Segundo ejercicio  -->
+  <article>
+      <p class="dato" id="2d1"> </p>
+      <p class="operando" id="2op1">  </p>
+      <p class="dato" id="2d2">  </p>
+      <p class="dato"> = </p>
+      <input class="result" type="text" id="resultado2" >
+  </article>
+  <!-- Tercer ejercicio  -->
+  <article>
+      <p class="dato" id="3d1"> </p>
+      <p class="operando" id="3op1">  </p>
+      <p class="dato" id="3d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado3" >
+  </article>
+  <!-- Cuarto ejercicio  -->
+  <article>
+      <p class="dato" id="4d1"> </p>
+      <p class="operando" id="4op1">  </p>
+      <p class="dato" id="4d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado4" >
+  </article>
+  <!-- Quinto ejercicio  -->
+  <article>
+      <p class="dato" id="5d1"> </p>
+      <p class="operando" id="5op1">  </p>
+      <p class="dato" id="5d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado5" >
+  </article>
+  <!-- Sexto ejercicio  -->
+  <article>
+      <p class="dato" id="6d1"> </p>
+      <p class="operando" id="6op1">  </p>
+      <p class="dato" id="6d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado6" >
+  </article>
+  <!--Septimo ejercicio  -->
+  <article>
+      <p class="dato" id="7d1"> </p>
+      <p class="operando" id="7op1">  </p>
+      <p class="dato" id="7d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado7" >
+  </article>
+  <!-- Octavo ejercicio  -->
+  <article>
+      <p class="dato" id="8d1"> </p>
+      <p class="operando" id="8op1"> </p>
+      <p class="dato" id="8d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado8" >
+  </article>
+  <!-- Noveno ejercicio  -->
+  <article>
+      <p class="dato" id="9d1"> </p>
+      <p class="operando" id="9op1"> </p>
+      <p class="dato" id="9d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado9" >
+  </article>
+  <!-- Decimo jercicio  -->
+  <article>
+      <p class="dato" id="10d1"> </p>
+      <p class="operando" id="10op1"> </p>
+      <p class="dato" id="10d2">  </p>
+      <p class="dato" > = </p>
+      <input class="result" type="text" id="resultado10" >
+  </article>
+  <article>
+    <input type="button" onclick="calcResult()" value="Calificar" class="buttons">
+    <p class="title2" id="cali"> </p>
+  </article>
+</section>
+
+
+</body>
+</html>
